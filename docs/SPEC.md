@@ -36,5 +36,26 @@ View [BOM.md](https://github.com/makerspet/oomwoo/blob/main/BOM.md).
   - place battery pack on the vacuum bottom, with an access door with screws, roughly under the I/O board or slightly behind, roughly centered to equalize pressure on both wheels and mops
   - TODO check if battery should be close to mops for cleaning pressure
 
- 
-    
+## Dock
+
+- use an external certified 24 V DC brick (~200–350 W)
+  - the dock only sees 24V
+  - inherit the brick's UL/CE certification
+  - reuse 25.2 V stick-vac motors, e.g. Dreame M10-E-4 (25.2 V, 310 W) handheld motor, use for auto-empty
+- dock contains USB PD sink, converts power to ~20-24V charger contacts
+  - dock charger contacts check for robot's presence (resistance), enable power only when robot is present
+- skip hot air dry, use a regular fan
+  - Hot air dries the mop in ~2–3 h instead of ~6. But the robot sits docked for hours anyway.
+  - Dropping the heater removes your biggest power draw and biggest thermal-safety risk.
+- bagless
+  - No consumable lock-in. The bin is a printed part.
+  - Downside: emptying a dusty bin by hand. The dock bin is far larger than the robot's, so you empty it ~monthly instead of every run. Design a wide opening + lid to limit the dust puff.
+  - Bagged is significantly easier to engineer — the bag is the container and the filter, so there's no cyclone to design.
+  - Bagless needs real separation (a working cyclone + washable filter), and the cyclone is the main engineering risk of this choice — a poor one sends fines straight to the filter, it clogs, and suction dies.
+  - Maybe prototype the auto-empty tier bagged to de-risk the port/sealing/motor work, then move to bagless once you've validated a cyclone geometry. Ship bagless.
+- safety
+  - Mains stays outside (certified brick) — non-negotiable.
+  - Physically separate the wet section from the electronics; drip loops, drainage, a dam/lip toward the contacts.
+  - Presence-detect the robot, energize charge contacts only when the robot is docked
+  - If you ever add the heater: redundant thermal cutoff (thermistor + independent thermal fuse), never fan-less.
+  - Document this tier honestly as the advanced build.
