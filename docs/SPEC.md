@@ -53,6 +53,8 @@ View [BOM.md](https://github.com/makerspet/oomwoo/blob/main/BOM.md).
   - Bagged is significantly easier to engineer — the bag is the container and the filter, so there's no cyclone to design.
   - Bagless needs real separation (a working cyclone + washable filter), and the cyclone is the main engineering risk of this choice — a poor one sends fines straight to the filter, it clogs, and suction dies.
   - Maybe prototype the auto-empty tier bagged to de-risk the port/sealing/motor work, then move to bagless once you've validated a cyclone geometry. Ship bagless.
+- bottom extraction auto-empty
+  - why? proven, Roborock style; gravity helps dust fall/evacuate vs non-bagless rise; only one, simple robot-side port, one flap - no sealed opening in the robot's dust bin needed; robot-to-dock flat plate-to-plate gasketed mating is relatively simple vs bagged nozzle-into-the-port mating; frees us space in the robot's rear
 - safety
   - Mains stays outside (certified brick) — non-negotiable.
   - Physically separate the wet section from the electronics; drip loops, drainage, a dam/lip toward the contacts.
