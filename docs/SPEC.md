@@ -1,8 +1,67 @@
+OOMWOO One open-source vacuum robot spec
+
+A brain-dump with some explanations. First of all, there are 3 living documents
+
+- BOM.md https://github.com/makerspet/oomwoo/blob/main/BOM.md
+- Companion article https://makerspet.com/blog/how-to-source-bom-for-oomwoo-open-source-vacuum-robot/
+- 3D design spec https://github.com/makerspet/oomwoo-one-cad/blob/main/docs/SPEC.md
+
+All 3D CAD design files live in this repo https://github.com/makerspet/oomwoo-one-cad
+
+Let me go over each component and explain the thinking about it. Please let me know any comments/questions.
+
+I will list the "recommended selection" as well as "backup alternatives".
+
+- "Drive wheel assembly pair". Recommended - reuse Roborock S5 Max wheels because they are abundant in the aftermarket https://makerspet.com/blog/how-to-source-bom-for-oomwoo-open-source-vacuum-robot/#driving-wheels There is a backup alternative - Roborock S5 (non-Max) wheels. These are also abundant, but older. So, don't use those, lets stick with Roborock S5 Max.
+- "Caster wheel". Recommended - caster wheel off iRobot Roomba I3/4/6/8, J7/Plus J7 E5/6 500 600 700 800 900 series. It appears to be the most abundant in the aftermarket. iRobot has used the same caster part using in all those models over years. Backup alternatives - plenty available off-the-shelf on AliExpress; or 3D print using TPU.
+- "Suction fan". Recommended - BL24131616 10kPa. Recommended for 2nd vacuum version - 36 kPa from Roborock Saros 20, . Backup alternatives - fans with lower suction. Why 10kPa - modern vacuums use increasingly stronger suction. Old vacuums use mere 2-2.5kPa. Users want to see bigger kPa suction.
+- "Main brush". Recommended - "Anti-tangle split single roller, rubber and bristles" for Roborock Saros. Users *strongly* want no tangling at all. This roller type seems one of the best - but *I may be wrong*. Another roller that appears to be great is "Anti-tangle hair-cutting dual roller, rubber and bristles", sold as replacement for Dreame vacuums. Please read about roller choices here https://makerspet.com/blog/how-to-source-bom-for-oomwoo-open-source-vacuum-robot/#main-brush Another option is 2 rollers, but having 2 rollers (I assume) will complicate your CAD design. So single (or single split?) roller seems best for 1st vacuum version. The 1st vacuum version's name is OOMWOO One.
+- "Battery pack + BMS". Required - the standard Roborock battery. Roborock has been using it over many years and many models. It comes with built-in protection and thermistor. No obvious alternatives.
+- "2D LiDAR". Recommended - "PCB mark X-WPFTB-V2.6.2, possibly Camsense". However, there are many alternatives. Some users own different LiDARs - and want to reuse them. So, we should let users pick their LiDAR - by 3D printing a custom mounting bracket.
+- "Compute Module". Required - Raspberry Pi CM4 or CM5. CM4 and CM5 have identical dimensions.
+- "I/O board". Required - custom-designed PCB https://github.com/makerspet/oomwoo-io-board. The I/O board will have all motor/sensor connectors, driver ICs. The "Compute Module" will plug into the I/O board. The I/O board shape/dimensions is *not* set - it will be decided based on your CAD design.
+- "Cliff sensors". Required - "cliff sensor + bumper switches bundle" iRobot Roomba 500 600 700 800 528 552 564 595 560 570 610 615 620 625 630 650 off-the-shelf, abundant in the aftermarket. The "bundle" includes 4 IR cliff sensors and 2 bumper switch assemblies. Backup alternatives - if this bundle doesn't work for you, let me know, I will suggest alternatives. Please note - some vacuums have 4 IR cliff sensors, while others have 6. The typical 4-sensor placement is (1) around the caster wheel (in the front) and in front of each driving wheel. 6-sensor vacuums add one sensor just behind each driving wheel. I've noticed some vacuums have 5 sensors (only one driving wheel has 2 cliff sensors). Generally, I'd like to have 6 cliff sensors, but 6-sensor bundles are harder to find/purchase.
+- "Bumper switches". Required - please use the iRobot bundle. If you find a problem using these - let me know.
+- "Main brush motor, gearbox". Required - let's use one off Roborock S5 because it is abundant. However, this assembly fits Roborock brushes with bristles (which tangle hair badly). So, you may need to design some sort of adapter to accommodate tangle-free brushes. Backup alternatives - we can buy the DC motor and 3D print gears using an SLA resin printer. But I'd like to avoid this additional complexity if possible. FYI, commercial vacuums use RS390 and RS395 DC motors.
+- "Side brush". Recommended - "2-arm curved" side brush from Roborock Saros. It seems better at anti-tangling (but I haven't checked). Backup alternatives - older Roborock side brushes or Dreame side brushes.
+- "Side brush motor". Recommended - only one side brush, extendable, from Roborock Qrevo https://www.alibaba.com/product-detail/Roborock-Telescopic-Robotic-Arm-Side-Brush_1601598853246.html Backup alternatives - if the recommended one doesn't work for you, let me know, I will check Dreame X40 and Dreame X50 extendable side brush assemblies.
+- "Wall sensor". Required - two little custom-designed PCB (one left, one right). These sensors (1) detect IR signal from the dock (2) detect wall (in a crude way). Backup alternative - a Roborock wall sensor assembly is available on AliExpress, but not abundant.
+- "Dock homing sensor". Required - a little custom-designed PCB with two IR sensors, in vacuum rear front. Backup alternatives - let me know if there is a problem and I will check.
+- "Carpet sensor". Required - ultrasonic 300kHz material sensor, fixed 30mm distance above floor. This model for your initial CAD design https://www.aliexpress.us/item/3256808845934210.html and this model for volume https://htwsensor.en.made-in-china.com/product/jARpDPKoaxVz/China-300kHz-Carpet-Material-Recognition-Sensor-for-Robotic-Vacuum-Cleaner-Ultraosinc-Sensor-Transducer.html .
+- "Charging contacts" (on the robot). Recommended - DIY using a nickel-plated steel strip (purchased on AliExpress). Located in the robot's rear around the homing IR sensor PCB. No springs. Strip width/length - up to you. AliExpress has 10-12mm. Each contact (positive, ground) connects to a PCB connector cable. The contact-to-wire connection could be accomplished by designing a tiny 3D printed "terminal'. Have a machine screw pressing the (stripped) wire against the strip.
+- "Mop motor assembly". Recommended - 2 rotary/disk mops. One static, one extendable. Use Roborock Qrevo FlexiArm https://www.alibaba.com/product-detail/Mop-Deceleration-Motor-Retractable-Mopping-Module_1601599652498.html Backup alternatives - if the Roborock Qrevo doesn't work for you, I can search Chinese ODM making Dreame MopExtend.
+- "Obstacle avoidance camera". Recommended - 1x front-facing OV5647 with a 16-pin flexible cable, ~130 degree FOV. Backup alternatives - none that are cheap.
+- Bagless vs bag dock. Recommendation: bagless. Why? Multiple users requested bagless; no-one asked for bags. Also, no consumable bag purchase/cost. The dock's dust bin can be 3D printed. However, bagged is easier to engineer. Bagless needs reliable separation (a working cyclone + washable filter). Designing a good cyclone is important. A poor one sends fine dust straight to the filter, clogs the filter, and suction dies.
+Auto-empty design. Recommendation: bottom extraction (Roborock style). Why? This is what my Claude says:
+
+=== Claude =====================================
+
+1. Gravity is on your side. Dust settles to the bottom of the bin, and bottom extraction pulls it downward into the dock bin. A dedicated side/rear vent higher on the bin fights gravity — you're asking the fan to lift settled dust before it can carry it out.
+2. Simplest robot-side port: one flap. You add a single spring/gravity trap door on the bin bottom — no second sealed opening in the bin. A dedicated vent means a second aperture you must seal against leaks during every vacuuming run.
+3. Flat, forgiving dock mating. The dock side is just a gasketed hole in the base plate; the robot parks over it. Flat-plate-to-flat-plate tolerates alignment error far better than threading a nozzle into a port (which a dedicated vent requires). Your ramp/alcove already gets the robot "close enough," and a broad base port forgives the rest — same philosophy as oversizing the charging pads.
+4. Proven and measurable. It's the dominant industry design, so you can study/measure a real Roborock dock to de-risk the printed geometry.
+5. It decouples from your crowded rear. Your rear is already busy — vertical contacts + mop wash tray (back-in docking). Putting auto-empty on the underside keeps it spatially separate from that cluster.
+
+The hard part is the same for both: the valve + the airflow path
+
+Whichever port you choose, the real engineering is the flap valve and the makeup-air path, not the port location:
+
+- The flap must do two contradictory things: seal tightly during vacuuming (so the robot's own fan doesn't lose suction through the auto-empty port) yet open freely under the dock's airflow. Bottom extraction makes this natural — the dock's downward suction pulls an inward/downward flap open, and spring + gravity reseat it. A high side/rear port needs a more deliberate valve.
+- You must give the emptying airflow a makeup-air inlet, or the dock fan just pulls a vacuum against a sealed bin and moves nothing. The clean trick (and what Roborock does): let the dock's suction draw makeup air in through the robot's own intake mouth — which is right there at the bottom — so air sweeps through the bin and out the bottom port, entraining settled dust on the way. Design the bin so that emptying airflow traverses the whole bin volume rather than short-circuiting between two nearby openings. This is the single thing that determines whether auto-empty actually evacuates dust vs. just whistling.
+
+Why not the dedicated bin vent
+
+- Its only real advantage is a seal that's higher and away from floor-level dust. That's outweighed by: a second aperture to seal, a nozzle-to-port mating that's alignment-fussy, fighting gravity, and more total seals — all worse for a printed part where every seam is a potential leak. Not worth it.
+
+Two build-specific notes
+
+- Bagless synergy: bottom extraction drops dust straight down into the dock's printed bin sitting in the base — exactly what you want for the bagless, printed-container design you chose. Gravity does half the work of separating debris before the dock cyclone/filter even acts.
+- Since the robot backs in rear-first (mop-dock orientation), position the dock base's suction hole under wherever the robot's bottom bin-port ends up in the docked position — likely forward of the mop/contact cluster. This is part of the same frozen dock interface as the contacts and the beacon, across all three tiers.
+
+So: pull from underneath through a single bottom trap-door, let makeup air come in via the robot's intake so the flow sweeps the bin, and drop it into the printed dock bin by gravity. The dedicated-vent approach adds sealing complexity for a benefit you don't need.
 
 
 Following modern (2026) consumer mop robot design, OOMWOO One requires
-
-View [BOM.md](https://github.com/makerspet/oomwoo/blob/main/BOM.md).
 
 - one right front side brush (not two), with an extendable arm (swings out to the side to clean under cabinets)
 - mop is 2-disk rotary (not roller for now); the right mop is extendable (swings out to the side to clean under cabinets); the left mop is fixed
@@ -56,7 +115,7 @@ View [BOM.md](https://github.com/makerspet/oomwoo/blob/main/BOM.md).
 - bottom extraction auto-empty
   - why? proven, Roborock style; gravity helps dust fall/evacuate vs non-bagless rise; only one, simple robot-side port, one flap - no sealed opening in the robot's dust bin needed; robot-to-dock flat plate-to-plate gasketed mating is relatively simple vs bagged nozzle-into-the-port mating; frees us space in the robot's rear
 - safety
-  - Mains stays outside (certified brick) — non-negotiable.
+  - Mains stays outside (certified brick)
   - Physically separate the wet section from the electronics; drip loops, drainage, a dam/lip toward the contacts.
   - Presence-detect the robot, energize charge contacts only when the robot is docked
   - If you ever add the heater: redundant thermal cutoff (thermistor + independent thermal fuse), never fan-less.
