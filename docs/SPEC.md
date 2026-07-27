@@ -95,16 +95,25 @@ Following modern (2026) consumer mop robot design, OOMWOO One requires
   - place battery pack on the vacuum bottom, with an access door with screws, roughly under the I/O board or slightly behind, roughly centered to equalize pressure on both wheels and mops
   - TODO check if battery should be close to mops for cleaning pressure
 
+
 ## Dock
+
+### Dock teardown
+
+See `teardown` folder.
 
 - tubing
   - water 9mm OD clean, 11mm OD dirty, clean mop spray 6mm OD
   - air auto-empty ID 29mm OD 33mm
-- ~use an external certified 24 V DC brick (~200–350 W)~
+- power 1600W
+
+### Specs
+
+- ~use an external certified 24 V DC brick (200–350 W)~
   - the dock only sees 24V
   - inherit the brick's UL/CE certification
   - ~reuse 25.2 V stick-vac motors, e.g. Dreame M10-E-4 (25.2 V, 310 W) handheld motor, use for auto-empty~
-- ~dock contains USB PD sink, converts power to ~20-24V charger contacts~
+- ~dock contains USB PD sink, converts power to 20-24V charger contacts~
   - dock charger contacts check for robot's presence (resistance), enable power only when robot is present
 - skip hot air dry, use a regular fan
   - Hot air dries the mop in ~2–3 h instead of ~6. But the robot sits docked for hours anyway.
