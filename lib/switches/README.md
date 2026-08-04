@@ -1,0 +1,1 @@
+- `C*` are JLCPCB components
