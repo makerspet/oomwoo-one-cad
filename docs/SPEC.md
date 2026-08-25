@@ -76,6 +76,8 @@ Following modern (2026) consumer mop robot design, OOMWOO One requires
 - TODO bagless or not
 - LiDAR must be inset 10+cm from vacuum's enclosure edges
   - because LiDAR sensor has a ~10cm dead zone around it
+- place LiDAR slightly off-vacuum-center
+  - this allows capturing scans from new viewpoints while vacuum spins in-place without getting stuck (usually when lost to regain its whereabouts on the map)
 - need to lift mops (when traveling over carpet) 12mm
 - need a [carpet sensor](https://makerspet.com/blog/how-to-source-bom-for-oomwoo-open-source-vacuum-robot/#carpet-sensor) (ultrasonic ~300kHz) placed in front of main brush; carpet detect causes mops to lift, stop spinning, main brush to spin appropriately for carpet
   - carpet sensor detects carpet ahead of time as the vacuum travels forward, so the mop is always lifted over carpet
