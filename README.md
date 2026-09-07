@@ -12,12 +12,14 @@
 
 </div>
 
-OOMWOO One open-source vacuum cleaner 3D CAD design. Part of the
-[OOMWOO](https://github.com/makerspet/oomwoo) project — an open-source, ROS 2,
-3D-printable robot vacuum you build yourself.
+DIY build instructions [will be posted here](https://makerspet.com/blog/oomwoo-vacuum-build-instructions/). Part of the [OOMWOO](https://github.com/makerspet/oomwoo) .
 
 # Active work in progress
 
 <img width="955" height="777" alt="oomwoo_base_sept_7" src="https://github.com/user-attachments/assets/a44fb618-ef9e-4ef8-b3fb-0bed5f083be7" />
 
+
 <img width="1694" height="1058" alt="side_brush_reverse_engineered" src="https://github.com/user-attachments/assets/19bfbbe9-79c1-4928-879e-ca544ab995cc" />
+
+
+<img width="1105" height="1051" alt="vacuum_assembly_reverse_engineered" src="https://github.com/user-attachments/assets/da5e2435-63fd-4020-92ad-e73c308c3c7b" />
