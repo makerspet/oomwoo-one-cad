@@ -16,6 +16,8 @@ OOMWOO One open-source vacuum cleaner 3D CAD design. Part of the
 [OOMWOO](https://github.com/makerspet/oomwoo) project — an open-source, ROS 2,
 3D-printable robot vacuum you build yourself.
 
-# Early work in progress
+# Active work in progress
 
 <img width="1576" height="717" alt="oomwoo_open_source_vacuum_very_early_design" src="https://github.com/user-attachments/assets/d4030659-2dbb-4f22-8454-afde8de8890c" />
+
+<img width="1694" height="1058" alt="side_brush_reverse_engineered" src="https://github.com/user-attachments/assets/19bfbbe9-79c1-4928-879e-ca544ab995cc" />
