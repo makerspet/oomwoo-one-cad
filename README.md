@@ -12,7 +12,7 @@
 
 </div>
 
-DIY build instructions [will be posted here](https://makerspet.com/blog/oomwoo-vacuum-build-instructions/). Part of the [OOMWOO](https://github.com/makerspet/oomwoo) .
+DIY build instructions [will be posted here](https://makerspet.com/blog/oomwoo-vacuum-build-instructions/). Please visit project home [OOMWOO](https://github.com/makerspet/oomwoo).
 
 # Active work in progress
 
