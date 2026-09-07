@@ -18,6 +18,6 @@ OOMWOO One open-source vacuum cleaner 3D CAD design. Part of the
 
 # Active work in progress
 
-<img width="1576" height="717" alt="oomwoo_open_source_vacuum_very_early_design" src="https://github.com/user-attachments/assets/d4030659-2dbb-4f22-8454-afde8de8890c" />
+<img width="955" height="777" alt="oomwoo_base_sept_7" src="https://github.com/user-attachments/assets/a44fb618-ef9e-4ef8-b3fb-0bed5f083be7" />
 
 <img width="1694" height="1058" alt="side_brush_reverse_engineered" src="https://github.com/user-attachments/assets/19bfbbe9-79c1-4928-879e-ca544ab995cc" />
