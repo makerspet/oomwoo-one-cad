@@ -6,9 +6,9 @@
 
 3D CAD · STEP · 3D printable · Chassis · Mounts · Open hardware
 
-![License](https://img.shields.io/badge/license-Apache--2.0-blue)
-![Status](https://img.shields.io/badge/status-early-orange)
-[![Part of OOMWOO](https://img.shields.io/badge/part%20of-OOMWOO-5eead4)](https://github.com/makerspet/oomwoo)
+![License](https://img.shields.io/badge/License-Apache--2.0-blue)
+![Status](https://img.shields.io/badge/Status-Design-orange)
+[![Part of OOMWOO](https://img.shields.io/badge/Part%20of-OOMWOO-5eead4)](https://github.com/makerspet/oomwoo)
 
 </div>
 
