@@ -33,6 +33,7 @@ I will list the "recommended selection" as well as "backup alternatives".
 - "Obstacle avoidance camera". Recommended - 1x front-facing OV5647 with a 16-pin flexible cable, ~130 degree FOV. Backup alternatives - none that are cheap.
 - Bagless vs bag dock. Recommendation: bagless. Why? Multiple users requested bagless; no-one asked for bags. Also, no consumable bag purchase/cost. The dock's dust bin can be 3D printed. However, bagged is easier to engineer. Bagless needs reliable separation (a working cyclone + washable filter). Designing a good cyclone is important. A poor one sends fine dust straight to the filter, clogs the filter, and suction dies.
 Auto-empty design. Recommendation: bottom extraction (Roborock style). Why? This is what my Claude says:
+- side brush with extensible arm assembly - expensive, hard to find retail. Roborock uses lots of gears; the brush DC motor both actuates the brush and the arm. Design from scratch using a little timing belt, aluminum timing pulleys and a geared DC motor (metal gearbox comes with the motor). 3D-print the assembly enclosure This avoids having to 3D print gears and keeps the build inexpensive.
 
 === Claude =====================================
 
