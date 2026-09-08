@@ -14,7 +14,7 @@
 
 DIY build instructions [will be posted here](https://makerspet.com/blog/oomwoo-vacuum-build-instructions/). Please visit project home [OOMWOO](https://github.com/makerspet/oomwoo).
 
-# Active work in progress
+## Active work in progress
 
 <img width="955" height="777" alt="oomwoo_base_sept_7" src="https://github.com/user-attachments/assets/a44fb618-ef9e-4ef8-b3fb-0bed5f083be7" />
 
@@ -23,3 +23,7 @@ DIY build instructions [will be posted here](https://makerspet.com/blog/oomwoo-v
 
 
 <img width="1105" height="1051" alt="vacuum_assembly_reverse_engineered" src="https://github.com/user-attachments/assets/da5e2435-63fd-4020-92ad-e73c308c3c7b" />
+
+## Dock concept
+
+<img width="678" height="912" alt="oomwoo_dock_concept" src="https://github.com/user-attachments/assets/f4b09ec8-92fe-4e6f-bf9c-31672941cee6" />
